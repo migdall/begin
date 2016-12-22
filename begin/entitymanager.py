@@ -2,9 +2,11 @@
 # Jesus Noland
 # 7/6/2015
 
-from entity import Entity
+from .entity import Entity
+
 
 class EntityManager():
+
     def __init__(self, ENTITY_MAX=100):
         self._entities = []
         self._componentsByClass = {}
@@ -22,7 +24,7 @@ class EntityManager():
         eid = self.generateNewEid()
         self._entities.append(eid)
         return Entity(eid)
-    
+
     def addComponentToEntity(self, component, entity):
         components = self._componentsByClass[component]
         if not components:
