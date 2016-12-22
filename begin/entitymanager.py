@@ -26,8 +26,11 @@ class EntityManager():
         return Entity(eid)
 
     def addComponentToEntity(self, component, entity):
-        components = self._componentsByClass[component]
+        components = self._componentsByClass[component.get_class()]
         if not components:
             components = {}
         components[entity.get_id()] = component
-        self._componentsByClass[component] = components
+        self._componentsByClass[component.get_class()] = components
+
+    def getComponentOfClass(self, component, entity):
+        return self._componentsByClass[component.get_class()][entity.get_id()]
