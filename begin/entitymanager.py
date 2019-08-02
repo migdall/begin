@@ -34,3 +34,8 @@ class EntityManager():
 
     def getComponentOfClass(self, component, entity):
         return self._componentsByClass[component.get_class()][entity.get_id()]
+
+    def removeEntity(self, entity):
+        for component in self._componentsByClass:
+            self._componentsByClass[component.get_class()].pop(entity.get_id())
+        self._entities.remove(entity.get_id())
