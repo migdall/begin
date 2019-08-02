@@ -1,2 +1,5 @@
 __pycache__
+.vscode/
+beginenv/
 begin.py
+main.py
