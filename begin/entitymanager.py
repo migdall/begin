@@ -1,6 +1,7 @@
 # Entity Manager, acts as the “database” where you can look up entities and get their list of components, entity management
 # Jesus Noland
 # 7/6/2015
+# Last Updated: 8/1/2019
 
 from .entity import Entity
 
